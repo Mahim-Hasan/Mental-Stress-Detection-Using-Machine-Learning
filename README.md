@@ -31,7 +31,7 @@ python manage.py runserver
 - Python
 - Django
 
-## Overview of the Work:
+## Overview of the Work
 1. ### ***Objective***
 	1. > *In this project I have built a machine learning model that will be able to perform detection of stress level of the students.*
 	2. > *I have trained the algorithms with mentally stressed and mentally healthy students.*

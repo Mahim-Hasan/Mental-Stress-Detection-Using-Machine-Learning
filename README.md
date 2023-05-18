@@ -21,7 +21,7 @@ python manage.py runserver
 ```
 
 ## ***Technology used***
-- Google forms
+- Google Forms
 - Google Sheets
 - Django Framework
 - Google Colab

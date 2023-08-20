@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    body{
+    background-color: white;
+    }
+</style>
+</head>
+<body>
+
+<style>
+.center {
+  padding: 20px 10px 200px 10px;
+  border: 2px solid green;
+  text-align: left;
+  margin: 0px;
+}
+.un h4{
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Quintessential', cursive;
+	font-size: 15px;
+	color: #0ba113;
+}
+.mild h4{
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Quintessential', cursive;
+	font-size: 15px;
+	color: #0d05f0;
+}
+.st h4{
+	font-family: 'Oswald', sans-serif;
+	font-family: 'Quintessential', cursive;
+	font-size: 15px;
+	color: #fa0505;
+}
+</style>
+<div class="center">
+  <div style="background-color:#a1f0f0; display: flex; align-items: center; justify-content: center; margin: 20px; padding: 0px">
+    <div style="background-color: lightgreen; width: 400px; border: 5px solid yellow; height: 100px; margin: 50px; padding: 20px 20px 0px 20px;">
+        <h2><p align="center">You are detected as {{ans}}</p></h2>
+    </div>
+  </div>
+    <div class="un"style="float: left; width: 20%; height: 10%; padding: 0px 130px 0px 20px">
+        <h4>If you find yourself Unstressed:<br>1 Congratulation! keep it up.<br>2 Try to be stress-free as always.<br></h4>
+    </div>
+    <div class="mild" style="float: left; width: 20%; height: 10%; padding: 0px 183px 0px 125px">
+        <h4>If you find yourself Mild stressed:<br>1 It is slightly worrying about you.<br>2 Do things that give you pleasure.<br></h4>
+    </div>
+    <div class="st" style="float: left; width: 25%; height: 20%; padding: 0px 0px 0px 0px">
+        <h4>If you find yourself Stressed:<br>1 This is not a good news.<br>2. Try to contact with a psychiatrist.</h4>
+    </div>
+</div>
+
+<br>
+<p align="center"><a href ="{% url 'home' %}">Go to Home</a></p>
+</body>
+</html>

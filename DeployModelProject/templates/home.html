@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+    body {
+        background-color: #ffff99;
+        margin: 0;
+    }
+</style>
+</head>
+<body>
+<h1><p align="center">Mental Stress Detection</p></h1>
+<form action="{% url 'result' %}" method="post" style="background-color: #99ffcc; margin: 0px 100px 10px 100px; padding: 0px; border-width:1px; border-style: solid; border-color:black">
+    {% csrf_token %}
+    <tr>
+        <td><h3><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">All the information collected through this form will be remained completely anonymous.
+            Are you permitting us to use your data anonymously for detecting your mental stress level?</p></h3></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="y" value="Yes"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">Gender</p></td>
+        <td><p align="center" style="padding: 0px">Male <input type="radio" required name="g" value="Male"> Female <input type="radio" required name="g" value="Female"> Prefer not to say <input type="radio" required name="g" value="Prefer not to say"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">Age</p></td>
+        <td><p align="center" style="padding: 0px">Less than 18 <input type="radio" required name="a" value="Less than 18"> 18-30 <input type="radio" required name="a" value="18-30"> More than 30 <input type="radio" required name="a" value="More than 30"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">1. Do you feel down for the last two weeks?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="A" value="Yes"> No <input type="radio" required name="A" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">2. Do you feel unmotivated and little interest while working?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="B" value="Yes"> No <input type="radio" required name="B" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">3. Do you feel lonely?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="C" value="Yes"> Sometimes <input type="radio" required name="C" value="Sometimes"> No <input type="radio" required name="C" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">4. Do you feel guilty for any reason?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="D" value="Yes"> No <input type="radio" required name="D" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">5. Have you been suffering from insomnia for a long time?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="E" value="Yes"> No <input type="radio" required name="E" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">6. Have you ever thought or tried to commit suicide?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="F" value="Yes"> No <input type="radio" required name="F" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">7. Do you have a bad relationship with your family members?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="G" value="Yes"> No <input type="radio" required name="G" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">8. Do you feel financially insecure?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="H" value="Yes"> No <input type="radio" required name="H" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">9. Do you have bad relationship with your classmate and teacher?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="I" value="Yes"> No <input type="radio" required name="I" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">10. Are you a victim of ragging in your educational life?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="J" value="Yes"> No <input type="radio" required name="J" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">11. Are you facing uncertainty about your career?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="K" value="Yes"> No <input type="radio" required name="K" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">12. Do you feel confused while taking a decision in any situation?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="L" value="Yes"> Sometimes <input type="radio" required name="L" value="Sometimes"> No <input type="radio" required name="L" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">13. Are you facing problems with inattention or forgetfulness?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="M" value="Yes"> No <input type="radio" required name="M" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">14. Do you feel insecure in your family?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="N" value="Yes"> Sometimes <input type="radio" required name="N" value="Sometimes"> No <input type="radio" required name="N" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">15. Do you feel unhappy with your educational life?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="O" value="Yes"> Sometimes <input type="radio" required name="O" value="Sometimes"> No <input type="radio" required name="O" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">16. Do you feel hopeless or disappointed?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="P" value="Yes"> Sometimes <input type="radio" required name="P" value="Sometimes"> No <input type="radio" required name="P" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">17. Have you ever been affected by Corona?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="Q" value="Yes"> No <input type="radio" required name="Q" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">18. Has any member of your family ever been infected by Corona?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="R" value="Yes"> No <input type="radio" required name="R" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">19. Has any member of your family died of Corona?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="S" value="Yes"> No <input type="radio" required name="S" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">20. Have you ever been fired from job because of Corona?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="T" value="Yes"> No <input type="radio" required name="T" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: pink; border-width:1px; border-style: solid; border-color:black; padding: 0px">21. Have you ever had a financial crisis during or after Corona?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="U" value="Yes"> No <input type="radio" required name="U" value="No"></p></td>
+    </tr>
+    <tr>
+        <td><p align="center" style="background-color: white; border-width:1px; border-style: solid; border-color:black; padding: 0px">22. Did Corona interrupt your studies?</p></td>
+        <td><p align="center" style="padding: 0px">Yes <input type="radio" required name="V" value="Yes"> No <input type="radio" required name="V" value="No"></p></td>
+    </tr>
+    <p align="center" style="margin: 5px"><input type="submit" name="" value="submit"></p>
+</form>
+</body>
+</html>

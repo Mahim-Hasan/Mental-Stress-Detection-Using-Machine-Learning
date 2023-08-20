@@ -5,18 +5,6 @@
 - Open with Command Shell
 - Run Command:  
 ```console 
-py -m venv project-venv
-```
-```console 
-project-venv\Scripts\activate.bat
-```
-```console 
-py -m pip install Django
-```
-```console 
-cd DeployModelProject
-```
-```console 
 python manage.py runserver
 ```
 
